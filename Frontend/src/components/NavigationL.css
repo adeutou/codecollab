@@ -1,0 +1,41 @@
+.code-collab {
+  /* Color with a slight gradient for visual interest */
+  background: linear-gradient(to right, #6BA3FF 0%, #478AEF 100%);
+  color: rgb(114, 175, 244);
+  -webkit-background-clip: text; /* Ensure gradient applies to text only */
+  -webkit-text-fill-color: transparent; /* Make text transparent to show gradient */
+font-family: 'Times New Roman', Times, serif;
+  /* Animation with adjusted duration and easing for smoother movement */
+  animation: marquee 7s ease-in-out infinite;
+  font-size: 36px; /* Maintain desired font size */
+  text-shadow: 1px 1px 2px rgb(114, 175, 244); /* Subtle shadow for depth */
+
+  /* Refined margin for precise centering (adjust based on layout) */
+  margin: 0 auto 0 calc(50vw - 180px); /* Center based on viewport width */
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.brand-and-text {
+  display: flex; /* Allow horizontal layout */
+  align-items: center; /* Center logo and text vertically */
+}
+.logoutt{
+  color: rgb(114, 175, 244); /* Light blue color */
+  border: 1px solid rgb(114, 175, 244);
+  border-radius: 4px;
+  padding: 5px 10px;
+  text-decoration: none;
+
+  &:hover {
+    background-color: rgb(114, 175, 244);
+    color: white;
+  }
+}

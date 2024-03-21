@@ -1,0 +1,94 @@
+.messages-output{
+    height: 80vh;
+    border: 1px solid rgb(114, 175, 244);
+    background-color: rgb(255, 255, 255);
+   /* background-image: url(../assets/fondbleu.JPG); */
+    border-radius: 5px;
+    overflow-y: scroll;
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+#btnmess{
+     margin: 0px 0px 0px 10px;
+      margin-bottom: 20px;
+}
+
+
+
+.message-container {
+  /* Set minimum height for content to show scrollbar */
+  min-height: 100px;
+
+  /* Customize scrollbar appearance (adjust colors and styles as needed) */
+  &::-webkit-scrollbar {
+    width: 8px; /* Scrollbar width */
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #ddd; /* Scrollbar thumb color */
+    border-radius: 5px; /* Rounded corners */
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: #f5f5f5; /* Scrollbar track color */
+  }
+}
+
+
+
+.message-inner {
+    margin-left: 20px;
+    margin-bottom: 10px;
+    padding: 10px;
+    min-width: 200px;
+    max-width: 90%;
+    text-align: left;
+    min-height: 80px;
+    font: 400 1em, sans-serif;
+    display: inline-block;
+    border-radius: 10px;
+    background-color: #d1e7dd;
+}
+
+.incoming-message .message-inner {
+    background-color: #c5b9ff;
+}
+
+.incoming-message {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 20px;
+}
+
+.message-timestamp-left {
+    font-size: 0.85em;
+    font-weight: 300;
+    margin-top: 10px;
+}
+
+.message-sender {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.message-date-indicator {
+    width: 150px;
+    margin: 0 auto;
+}
+
+.conversation-info {
+    padding: 0;
+    margin: 0 auto;
+    text-align: center;
+    height: 100px;
+}
+
+.conversation-profile-pic {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    margin: 10px auto;
+    margin-bottom: 30px;
+    border-radius: 50%;
+    margin-left: 10px;
+}
