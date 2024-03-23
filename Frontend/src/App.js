@@ -4,12 +4,10 @@ import './App.css';
 import {AppContext,socket} from './context/appContext';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
-import Login from './pages/LoginLogin'
-import Chat from './pages/Chat'
-import Signup from './pages/LoginSignup';
-import Carou from './components/caroussel';
+//import Login from './pages/LoginLogin'
+//import Chat from './pages/Chat'
+//import Signup from './pages/LoginSignup';
 import Footer from './components/Footer/Footer';
-import Slider from "./components/slider";
 import { useState } from 'react';
 
 function App() {
@@ -21,14 +19,13 @@ function App() {
   return (
     <AppContext.Provider value={{socket,currentRoom,setCurrentRoom,messages,setMessages,newMessages,setNewMessages,rooms,setRooms}}>
     <BrowserRouter>
-      {/*<Navbar /> */}
+      <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/ca" element={<Carou />} />
-        <Route path="/test" element={<Slider />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
-        <Route path="/chat" element={<Chat />} />
+        {/* <Route path="/ca" element={<Carou />} /> */}
+        {/* <Route path="/login" element={<Login />} /> */}
+        {/* <Route path="/signup" element={<Signup />} /> */}
+        {/* <Route path="/chat" element={<Chat />} /> */}
       </Routes>
       <Footer />
     </BrowserRouter>

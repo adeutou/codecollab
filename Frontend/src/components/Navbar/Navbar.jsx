@@ -9,11 +9,10 @@ import Registerdialog from "./Registerdialog";
 import { images } from '../../constants';
 
 const navigation = [
-    { name: 'Home', href: '#/', current: true },
-    { name: 'Courses', href: '#courses', current: false },
-    { name: 'Mentor', href: '#mentor', current: false },
-    { name: 'Group', href: '/', current: false },
-    { name: 'Testimonial', href: '#testimonial', current: false },
+    { name: 'Accueil', href: '/', current: true },
+    { name: 'Bibliothèque de code', href: '#mentor', current: false },
+    { name: 'Forum', href: '#forum', current: false },
+    { name: 'Tutoriels', href: '#testimonial', current: false },
 ];
 
 function classNames(...classes) {
@@ -51,16 +50,18 @@ const Navbar = () => {
                             {/* LOGO */}
 
                             <div className="flex flex-shrink-0 items-center">
-                                <img
-                                    className="block h-12 w-40 lg:hidden"
-                                    src={images.logo}
-                                    alt="dsign-logo"
-                                />
-                                <img
-                                    className="hidden h-full w-full lg:block"
-                                    src={images.logo}
-                                    alt="dsign-logo"
-                                />
+                                <Link to="/">
+                                    <img
+                                        className="block h-12 w-40 lg:hidden"
+                                        src={images.logo}
+                                        alt="dsign-logo"
+                                    />
+                                    <img
+                                        className="hidden h-full w-full lg:block"
+                                        src={images.logo}
+                                        alt="dsign-logo"
+                                    />
+                                </Link>
                             </div>
 
                             {/* LINKS */}
