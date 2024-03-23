@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 import Banner from '../components/Banner/Banner';
 import Newsletter from '../components/Newsletter/Newsletter';
@@ -17,6 +17,6 @@ function Home() {
     </main>
   );
   
-}
+};
 
-export default Home
+export default Home;

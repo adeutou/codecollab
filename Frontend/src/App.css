@@ -1,62 +1,38 @@
-
-#footer{
-  background: rgb(114, 175, 244) ;
-  background: linear-gradient(90deg,rgb(114, 175, 244)50%, rgb(0, 212, 255,1)  100%);
-}
-.btn {
-  margin: 30px 0px 0px 260px;
-}
-#registerbt {
-  margin: 30px 0px 0px 7px;
-}
-
-#btnn{
-   margin: 30px 0px 0px 30px;
-    background: rgb(114, 175, 244) ;
-  background: linear-gradient(90deg,rgb(114, 175, 244)50%, rgb(0, 212, 255,1)  100%);
-}
-#btnnn{
-   margin: 30px 0px 0px 10px;
-   
-  
-}
-.but{
-   background-color: rgb(114, 175, 244);
-    color: #FFF;
-  
-  border: none;
-  border-radius: 10px;
-  padding: 10px 20px;
-  font-size: 14px;
-  font-weight: bold;
+.App {
   text-align: center;
-  cursor: pointer;
-  transition: all 0.2s ease-in-out;
-  
-  /* Positionnement dans la barre de navigation
-  position: absolute;
-  right: 20px;
-  top: 10px; */
-  
-  /* Optionnel : styles pour le hover */
-  &:hover {
-   background-color:#fff;
-  color: rgb(114, 175, 244);
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
   }
-
 }
 
-/*card*/
-.card{
-  transition: all 0.5s ease;
-}
-.card:hover{
-  cursor: pointer;
-  box-shadow: 0 .5rem 1rem rgb(0, 0,0,.15);
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
 }
 
-/* Form
-.form{
-  background: rgb(114, 175, 244) ;
-  background: linear-gradient(90deg,rgb(114, 175, 244)50%, rgb(0, 212, 255,1)  100%);
-} */
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

@@ -21,7 +21,7 @@ function classNames(...classes) {
 
 const CustomLink = ({ href, onClick, children }) => {
     return (
-        <Link href={href} passHref>
+        <Link href={href} passhref>
             <span
                 onClick={onClick}
                 className="px-3 py-4 text-lg font-normal"

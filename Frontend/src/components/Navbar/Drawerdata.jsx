@@ -2,11 +2,10 @@ import React from "react";
 import { Link } from 'react-router-dom';
 
 const navigation = [
-    { name: 'Home', href: '/', current: true },
-    { name: 'Courses', href: '#courses', current: false },
-    { name: 'Mentor', href: '#mentor', current: false },
-    { name: 'Group', href: '#/', current: false },
-    { name: 'Testimonial', href: '#testimonial', current: false },
+    { name: 'Accueil', href: '/', current: true },
+    { name: 'Bibliothèque de code', href: '#mentor', current: false },
+    { name: 'Forum', href: '#forum', current: false },
+    { name: 'Tutoriels', href: '#testimonial', current: false },
 ];
 
 function classNames(...classes) {

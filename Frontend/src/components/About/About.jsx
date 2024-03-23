@@ -7,11 +7,11 @@ const About = () => {
     <div id="about">
       <div className="mx-auto max-w-7xl sm:py-8 px-4 lg:px-8 ">
         <div className="sm:flex justify-between items-center">
-          <h3 className="text-midnightblue text-4xl lg:text-55xl font-semibold mb-5 sm:mb-0">
+          <h3 className="text-midnightblue text-4xl lg:text-55xl font-semibold sm:mb-0">
             Qui sommes-nous?
           </h3>
         </div>
-        <p>
+        <p className="mt-5 text-justify">
           <em><b>CodeCollab</b></em> est une plateforme dédiée à l'entraide et à la
           collaboration entre étudiants en génie logiciel, TIC, 3IL, et tout
           étudiant passionné d'IT. <br />
@@ -19,58 +19,58 @@ const About = () => {
           connaissances, résoudre des problèmes de programmation ensemble et
           développer leurs compétences techniques.
         </p>
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-2 gap-12 mt-10">
           
 
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                 
-                <div class="grid gap-4">
+                <div className="grid gap-4">
                     <div>
-                        <img class="h-auto max-w-full rounded-lg" src={images.collaboration_1} alt="" />
+                        <img className="h-auto max-w-full rounded-lg" src={images.collaboration_1} alt="" />
                     </div>
                     <div>
-                        <img class="h-auto max-w-full rounded-lg" src={images.code_snippet_2} alt="" />
+                        <img className="h-auto max-w-full rounded-lg" src={images.code_snippet_2} alt="" />
                     </div>
                     <div>
-                        <img class="h-auto max-w-full rounded-lg" src={images.mentoring_1} alt="" />
-                    </div>
-                </div>
-                <div class="grid gap-4">
-                    <div>
-                        <img class="h-auto max-w-full rounded-lg" src={images.code_snippet_1} alt="" />
-                    </div>
-                    <div>
-                        <img class="h-auto max-w-full rounded-lg" src={images.mentoring_2} alt="" />
-                    </div>
-                    <div>
-                        <img class="h-auto max-w-full rounded-lg" src={images.code_snippet_3} alt="" />
+                        <img className="h-auto max-w-full rounded-lg" src={images.mentoring_1} alt="" />
                     </div>
                 </div>
-                <div class="grid gap-4">
+                <div className="grid gap-4">
                     <div>
-                        <img class="h-auto max-w-full rounded-lg" src={images.mentoring_3} alt="" />
+                        <img className="h-auto max-w-full rounded-lg" src={images.code_snippet_1} alt="" />
                     </div>
                     <div>
-                        <img class="h-auto max-w-full rounded-lg" src={images.code_snippet_5} alt="" />
+                        <img className="h-auto max-w-full rounded-lg" src={images.mentoring_2} alt="" />
                     </div>
                     <div>
-                        <img class="h-auto max-w-full rounded-lg" src={images.collaboration_2} alt="" />
+                        <img className="h-auto max-w-full rounded-lg" src={images.code_snippet_3} alt="" />
                     </div>
                 </div>
-                <div class="grid gap-4">
+                <div className="grid gap-4">
                     <div>
-                        <img class="h-auto max-w-full rounded-lg" src={images.code_snippet_4} alt="" />
+                        <img className="h-auto max-w-full rounded-lg" src={images.mentoring_3} alt="" />
                     </div>
                     <div>
-                        <img class="h-auto max-w-full rounded-lg" src={images.collaboration_4} alt="" />
+                        <img className="h-auto max-w-full rounded-lg" src={images.code_snippet_5} alt="" />
                     </div>
                     <div>
-                        <img class="h-auto max-w-full rounded-lg" src={images.collaboration_3} alt="" />
+                        <img className="h-auto max-w-full rounded-lg" src={images.collaboration_2} alt="" />
+                    </div>
+                </div>
+                <div className="grid gap-4">
+                    <div>
+                        <img className="h-auto max-w-full rounded-lg" src={images.code_snippet_4} alt="" />
+                    </div>
+                    <div>
+                        <img className="h-auto max-w-full rounded-lg" src={images.collaboration_4} alt="" />
+                    </div>
+                    <div>
+                        <img className="h-auto max-w-full rounded-lg" src={images.collaboration_3} alt="" />
                     </div>
                 </div>
             </div>
 
-            <div>
+            <div className="">
                 <b>CodeCollab</b> est dotée de 
                 <ul className="list-disc list-outside">
                     <li className="mt-3 text-justify">
