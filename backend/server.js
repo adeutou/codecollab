@@ -1,10 +1,31 @@
 const express = require("express");
 const app = express();
+
 const userRoutes = require("./routes/userRoutes");
 const User = require("./models/User");
 const Message = require("./models/Message");
+
 const rooms = ["HTML/CSS", "JAVASCRIPT", "PHYTHON", "PHP"];
 const cors = require("cors");
+
+require("dotenv").config();
+
+const nodemailer = require('nodemailer');
+const fs = require('fs');
+const path = require('path');
+// Create Nodemailer transporter
+const transporter = nodemailer.createTransport({
+  service: 'Gmail',
+  auth: {
+      user: process.env.GMAIL_USER,
+      pass: process.env.GMAIL_PASSWORD
+  }
+});
+// Read the HTML template file containing the email content
+const emailTemplate = fs.readFileSync(path.resolve(__dirname, 'Newsletter/newsLetter-template.html'), 'utf8');
+
+
+
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -93,6 +114,38 @@ io.on("connection", (socket) => {
 app.get("/rooms", (req, res) => {
   res.json(rooms);
 });
+
+// API endpoint to handle subscriber data for newsletter and send personalized email
+app.post('/subscribe', async (req, res) => {
+  const { email } = req.body;
+
+  try {
+      // Save subscriber email to MongoDB Atlas
+      const newSubscriber = new Subscriber({ email });
+      await newSubscriber.save();
+
+      // Send personalized email with app logo using Nodemailer
+      const mailOptions = {
+          from: 'codecollab@gmail.com',
+          to: email,
+          subject: 'Confirmation de la souscription',
+          html: emailTemplate
+      };
+
+      transporter.sendMail(mailOptions, (error, info) => {
+          if (error) {
+              console.log(error);
+              res.status(500).json({ message: "L'email de confirmation n'a pas pu être envoyé" });
+          } else {
+              console.log('Email sent: ' + info.response);
+              res.status(201).json({ message: 'Souscription réussie' });
+          }
+      });
+  } catch (error) {
+      res.status(500).json({ message: 'Échec de la souscription' });
+  }
+});
+
 
 server.listen(PORT, () => {
   console.log("listening to port", PORT);
