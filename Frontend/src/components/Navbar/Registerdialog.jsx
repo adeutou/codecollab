@@ -9,15 +9,16 @@ import { images } from '../../constants';
 const Register = () => {
     const navigate = useNavigate();
 
-    let [isOpen, setIsOpen] = useState(false)
+    let [isOpen, setIsOpen] = useState(false);
+    let [error, setError] = useState(null);
 
     const closeModal = () => {
         setIsOpen(false)
-    }
+    };
 
     const openModal = () => {
         setIsOpen(true)
-    }
+    };
 
     const handleRegister = async (event) => {
         event.preventDefault();

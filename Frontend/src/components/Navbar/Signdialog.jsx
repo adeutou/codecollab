@@ -9,15 +9,16 @@ import { images } from '../../constants';
 const Signin = () => {
     const navigate = useNavigate();
 
-    let [isOpen, setIsOpen] = useState(false)
+    let [isOpen, setIsOpen] = useState(false);
+    let [error, setError] = useState(null);
 
     const closeModal = () => {
         setIsOpen(false)
-    }
+    };
 
     const openModal = () => {
         setIsOpen(true)
-    }
+    };
 
     const handleSignIn = async (event) => {
         event.preventDefault();
