@@ -39,6 +39,10 @@ const Signin = () => {
                 console.log('Error response:', error.response.data);
             } else if (error.request) {
                 console.log('No response received:', error.request);
+                if (error.request.status === 0) {
+                    // CORS-related error
+                    setError('Cross-origin request blocked. Please check your backend configuration.');
+                }
             } else {
                 console.log('Error:', error.message);
             }
