@@ -1,29 +1,44 @@
-const express = require('express');
-const cors = require('cors');
+const express = require("express");
 const app = express();
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
+const morgan = require("morgan");
+const bodyParser = require("body-parser");
+var cors = require("cors");
+require("dotenv").config();
+var cookieParser = require("cookie-parser");
 
-// Import routes
-const authRoutes = require('./routes/authRoutes');
+const errorHandler = require("./middleware/error");
 
-require('dotenv').config();
+//import routes
+const authRoutes = require("./routes/authRoutes");
 
-//Connect to MongoDB Atlas with updated options
-mongoose.connect(process.env.MONGODB_URI)
-  .then(() => console.log('Connexion à MongoDB réussie !'))
-  .catch(err => console.error('Erreur de connexion à MongoDB', err));
+//database connection
+mongoose
+  .connect(process.env.MONGODB_URI)
+  .then(() => console.log("Connexion à MongoDB réussie !"))
+  .catch((err) => console.error("Erreur de connexion à MongoDB", err));
 
-// Enable CORS
-app.use(cors({
-    origin: 'http://localhost:3000',
-    methods: ['GET', 'POST'],
-    allowedHeaders: ['Content-Type', 'Authorization']
-}));
+//Middleware
+app.use(morgan("dev"));
+app.use(bodyParser.json({ limit: "5mb" }));
+app.use(
+  bodyParser.urlencoded({
+    limit: "5mb",
+    extended: true,
+  })
+);
+app.use(cookieParser());
+app.use(cors());
 
-//Routes
-app.use('/api/auth', authRoutes);
+//ROUTES MIDDLEWARE
+app.use("/api", authRoutes);
 
-const PORT = process.env.PORT || 5001;
-app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
+//error middleware
+app.use(errorHandler);
+
+//port
+const port = process.env.PORT || 5001;
+
+app.listen(port, () => {
+  console.log(`Server listening at ${port}`);
 });
