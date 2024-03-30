@@ -49,6 +49,7 @@ import albert from '../assets/mentor/ADN.png';
 import francois from '../assets/mentor/ndje1.png';
 import linkedin from '../assets/mentor/linkedin.svg';
 import bo from '../assets/mentor/bo.svg';
+import user_img from '../assets/mentor/user.svg';
 
 export default{
     arrow,
@@ -91,4 +92,5 @@ export default{
     francois,
     linkedin,
     bo,
+    user_img,
 };
