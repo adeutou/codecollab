@@ -9,7 +9,9 @@ import AdminRoute from "./components/AdminRoute";
 import UserRoute from "./components/UserRoute";
 import Home from "./pages/Home";
 import Navbar from './components/Navbar';
+import NotFound from "./pages/NotFound";
 import Footer from './components/Footer/Footer';
+import Forum from "./pages/Forum";
 
 function App() {
   return (
@@ -22,6 +24,8 @@ function App() {
             <Navbar />
             <Routes>
               <Route path="/" element={<Home />} />
+              <Route path="/forum" element={<Forum />} />
+              <Route path="*" element={<NotFound />} />
             </Routes>
             <Footer />
           </BrowserRouter>
