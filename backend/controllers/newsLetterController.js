@@ -1,6 +1,7 @@
 const Newsletter = require('../models/newsletterModel');
 const nodemailer = require('nodemailer');
 const fs = require('fs');
+const path = require('path'); 
 
 require("dotenv").config();
 
