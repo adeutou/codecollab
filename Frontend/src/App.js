@@ -12,6 +12,7 @@ import Navbar from './components/Navbar';
 import NotFound from "./pages/NotFound";
 import Footer from './components/Footer/Footer';
 import Forum from "./pages/Forum";
+import CodeSnippet from "./pages/CodeSnippet";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
             <Navbar />
             <Routes>
               <Route path="/" element={<Home />} />
+              <Route path="/codesnippet" element={<CodeSnippet />} />
               <Route path="/forum" element={<Forum />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
