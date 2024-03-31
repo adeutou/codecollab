@@ -43,10 +43,8 @@ const Signin = () => {
  useEffect(() => {
    if (isAuthenticated) {
      if (userInfo.role === "admin") {
-       navigate("/");
-     } else {
-       navigate("/");
-     }
+       navigate("/admin/dashboard");
+     } 
    }
  }, [isAuthenticated]);
 
@@ -60,6 +58,7 @@ const Signin = () => {
      //alert(JSON.stringify(values, null, 2));
      dispatch(userSignInAction(values));
      actions.resetForm();
+     closeModal()
    },
  });
 
@@ -69,8 +68,8 @@ const Signin = () => {
           <div className="hidden lg:block">
             <button
               type="button"
-              className="text-lg text-Blueviolet font-medium"
-              onClick={openModal}
+               className="text-lg text-Blueviolet font-medium"
+             onClick={openModal}
             >
               Log In
             </button>

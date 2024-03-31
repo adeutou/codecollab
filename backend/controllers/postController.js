@@ -1,11 +1,12 @@
-//const cloudinary = require("../utils/cloudinary");
-Post = require("../models/postModel");
+
+const cloudinary = require("../utils/cloudinary");
+const Post = require("../models/postModel");
 const ErrorResponse = require("../utils/errorResponse");
-//const main = require("../app");
+const main = require("../index");
 
 //create post
 exports.createPost = async (req, res, next) => {
-  const { title, content, postedBy, image, likes, comments } = req.body;
+  const { title, content, postedBy,comments } = req.body;
 
   try {
     //upload image in cloudinary
@@ -68,7 +69,7 @@ exports.showSinglePost = async (req, res, next) => {
 exports.deletePost = async (req, res, next) => {
   const currentPost = await Post.findById(req.params.id);
 
-  //delete post image in cloudinary
+  // //delete post image in cloudinary
   // const ImgId = currentPost.image.public_id;
   // if (ImgId) {
   //   await cloudinary.uploader.destroy(ImgId);
@@ -88,14 +89,14 @@ exports.deletePost = async (req, res, next) => {
 //update post
 exports.updatePost = async (req, res, next) => {
   try {
-    const { title, content, image } = req.body;
+    const { title, content} = req.body;
     const currentPost = await Post.findById(req.params.id);
 
     //build the object data
     const data = {
       title: title || currentPost.title,
       content: content || currentPost.content,
-    //  image: image || currentPost.image,
+      //image: image || currentPost.image,
     };
 
     //modify post image conditionally
