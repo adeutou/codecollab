@@ -12,6 +12,8 @@ const errorHandler = require("./middleware/error");
 //import routes
 const authRoutes = require("./routes/authRoutes");
 const postRoute = require("./routes/postRoute");
+const codeSnippetRoutes = require('./routes/codeSnippetRoutes');
+const newsletterRoutes = require('./routes/newsLetterRoute');
 
 //database connection
 mongoose
@@ -34,6 +36,8 @@ app.use(cors());
 //ROUTES MIDDLEWARE
 app.use("/api", authRoutes);
 app.use("/api", postRoute);
+app.use('/api', codeSnippetRoutes);
+app.use('/api', newsletterRoutes);
 
 //error middleware
 app.use(errorHandler);
