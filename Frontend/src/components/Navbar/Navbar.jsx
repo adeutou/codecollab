@@ -12,7 +12,7 @@ import { userLogoutAction } from '../../redux/actions/userAction';
 const navigation = [
     { name: 'Accueil', href: '/', current: true },
     { name: 'Bibliothèque de code', href: '#mentor', current: false },
-    { name: 'Forum', href: '#forum', current: false },
+    { name: 'Forum', href: '/forum', current: false },
     { name: 'Tutoriels', href: '#testimonial', current: false },
 ];
 
@@ -23,7 +23,7 @@ function classNames(...classes) {
 
 const CustomLink = ({ href, onClick, children }) => {
     return (
-        <Link href={href} passhref>
+        <Link to={href} passhref>
             <span
                 onClick={onClick}
                 className="px-3 py-4 text-lg font-normal"

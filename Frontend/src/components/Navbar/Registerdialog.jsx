@@ -50,6 +50,7 @@ const Register = () => {
        //  alert(JSON.stringify(values, null, 2));
        dispatch(userSignUpAction(values));
        actions.resetForm();
+       closeModal()
      },
    });
 

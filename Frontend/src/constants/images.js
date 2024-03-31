@@ -15,6 +15,7 @@ import twitter from '../assets/footer/twitter.svg';
 import bgFile from '../assets/newsletter/bgFile.png';
 import bgg from '../assets/newsletter/bgg.png';
 import imgSend from '../assets/newsletter/send.svg';
+import com from '../assets/mentor/comm.png'
 
 //from Stacks
 import cpp from '../assets/stacks/cpp.png';
@@ -88,7 +89,7 @@ export default{
     mentoring_1,
     mentoring_2,
     mentoring_3,
-    albert,
+    albert,com,
     francois,
     linkedin,
     bo,
