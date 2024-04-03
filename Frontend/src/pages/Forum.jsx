@@ -4,22 +4,40 @@ import { Box, Container, Grid } from "@mui/material";
 import axios from "axios";
 import moment from "moment";
 import Loader from "../components/Loader";
-import { io } from "socket.io-client";
-
 import { useSelector } from "react-redux";
 import CreatePost from "../admin/CreatePost";
-const socket = io("/", {
-  reconnection: true,
-});
 
-const Forum = () => {
+const Forum = ({ showPostss }) => {
   const { userInfo } = useSelector((state) => state.signIn);
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [postAddLike, setPostAddLike] = useState([]);
-  const [postRemoveLike, setPostRemoveLike] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const postsPerPage = 6;
 
-  //display posts
+  const [filteredPosts, setFilteredPosts] = useState([]);
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const pageNumbers = [];
+  for (let i = 1; i <= Math.ceil(filteredPosts.length / postsPerPage); i++) {
+    pageNumbers.push(i);
+  }
+  const handleSearchChange = (event) => {
+    setSearchQuery(event.target.value);
+  };
+
+  const filterPosts = (posts, searchQuery) => {
+    return posts.filter((post) => {
+      return (
+        post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        post.content.toLowerCase().includes(searchQuery.toLowerCase())
+      );
+    });
+  };
+
+  useEffect(() => {
+    const filtered = filterPosts(posts, searchQuery);
+    setFilteredPosts(filtered);
+  }, [searchQuery, posts]);
 
   const showPosts = async () => {
     setLoading(true);
@@ -32,32 +50,45 @@ const Forum = () => {
     }
   };
 
+  
+
   useEffect(() => {
     showPosts();
   }, []);
 
   
 
-  let uiPosts =
-    postAddLike.length > 0
-      ? postAddLike
-      : postRemoveLike.length > 0
-      ? postRemoveLike
-      : posts;
+  
+
+  
+
+  const indexOfLastPost = currentPage * postsPerPage;
+  const indexOfFirstPost = indexOfLastPost - postsPerPage;
+  const currentPosts = filteredPosts.slice(indexOfFirstPost, indexOfLastPost);
+
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   return (
     <>
-      <div className=" bg-white w-full shadow-md">
+      <div className="bg-blueviolet w-full shadow-md">
         <div className="container mx-auto flex items-center justify-between py-4">
           <h1 className="text-xl font-bold text-gray-900">Liste des posts</h1>
-          {userInfo ? (
-<CreatePost/>
+          <div className="relative flex items-center ">
+            <input
+              className="rounded-lg px-4 py-2 border border-transparent focus:outline-none focus:ring-2 focus:ring-Blueviolet-400 text-Blueviolet-500 placeholder-Blueviolet-300 bg-white shadow-md sm:text-sm w-full"
+              placeholder="Rechercher un post..."
+              type="text"
+              value={searchQuery}
+              onChange={handleSearchChange}
+            />
+          </div>
 
+          {userInfo ? (
+            <CreatePost  />
           ) : (
             <>
-              {" "}
               <h1 className="text-xl font-bold text-Blueviolet">
-                Connecter vous pour creer un Post
+                Connectez-vous pour créer un Post
               </h1>
             </>
           )}
@@ -75,7 +106,7 @@ const Forum = () => {
               {loading ? (
                 <Loader />
               ) : (
-                uiPosts.map((post, index) => (
+                currentPosts.map((post, index) => (
                   <Grid item xs={2} sm={4} md={4} key={index}>
                     <PostCard
                       id={post._id}
@@ -91,13 +122,22 @@ const Forum = () => {
             </Grid>
           </Box>
         </Container>
+        <div className="flex justify-center mt-4">
+          {pageNumbers.map((number) => (
+            <button
+              key={number}
+              onClick={() => paginate(number)}
+              className={`px-4 py-2 mx-2 rounded-full font-medium text-Blueviolet bg-indigo-100 hover:bg-indigo-200 focus:ring-4 focus:ring-Blueviolet focus:outline-none transition-colors duration-200 ${
+                currentPage === number ? "bg-white text-Blueviolet" : ""
+              }`}
+            >
+              {number}
+            </button>
+          ))}
+        </div>
       </Box>
     </>
   );
 };
 
 export default Forum;
-
-
-
-

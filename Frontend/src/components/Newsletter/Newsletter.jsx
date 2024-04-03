@@ -10,7 +10,8 @@ const Newsletter = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.post('http://localhost:5001/subscribe', { email });console.log(email);
+            await axios.post('http://localhost:5001/api/subscribe', { email });
+            setEmail('');
             alert('Subscription successful!');
         } catch (error) {
             alert('Subscription failed. Please try again.');

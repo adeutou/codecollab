@@ -13,6 +13,7 @@ import Navbar from './components/Navbar';
 import NotFound from "./pages/NotFound";
 import Footer from './components/Footer/Footer';
 import Forum from "./pages/Forum";
+import CodeSnippet from "./pages/CodeSnippet";
 import Layout from "./admin/global/Layout";
 import SinglePost from "./pages/SinglePost";
 import EditPost from "./admin/EditPost";
@@ -23,9 +24,6 @@ const AdminDashboardHOC = Layout(AdminDashboard);
 const CreatePostHOC = Layout(CreatePost);
 const EditPostHOC = Layout(EditPost);
 //const UserDashboardHOC = Layout(UserDashboard);
-
-
-
 
 
 function App() {
@@ -39,8 +37,9 @@ function App() {
             <Navbar />
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="*" element={<NotFound />} />
+              <Route path="/codesnippet" element={<CodeSnippet />} />
               <Route path="/forum" element={<Forum />} />
+              <Route path="*" element={<NotFound />} />           
               <Route path="/post/:id" element={<SinglePost />} />
               <Route
                 path="/admin/dashboard"

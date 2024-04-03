@@ -118,7 +118,7 @@ const SinglePost = () => {
                   ""
                 ) : (
                   <Typography variant="h5" sx={{ pt: 3, mb: 2 }}>
-                    Comments:
+                    Commentaires:
                   </Typography>
                 )}
 
@@ -133,16 +133,9 @@ const SinglePost = () => {
                 {userInfo ? (
                   <>
                     <Box sx={{ pt: 1, pl: 3, pb: 3, bgcolor: "#fafafa" }}>
-                      {/* <h2>Add your comment here!</h2> */}
+                     
                       <form onSubmit={addComment}>
-                        {/* <TextareaAutosize
-                          onChange={(e) => setComment(e.target.value)}
-                          value={comment}
-                          aria-label="minimum height"
-                          minRows={3}
-                          placeholder="Add a comment..."
-                          style={{ width: 500, padding: "5px" }}
-                        /> */}
+                       
                         <div className="flex flex-col w-full mt-4">
                           <div className="relative rounded-md border border-Blueviolet p-4">
                             <textarea
@@ -152,8 +145,7 @@ const SinglePost = () => {
                               value={comment}
                               onChange={(e) => setComment(e.target.value)}
                             />
-{/* <div className="absolute top-2 right-2"></div> */}
-                          </div>
+   </div>
                         </div>
                         <Box sx={{ pt: 4 }}>
                           <button
@@ -185,8 +177,8 @@ const SinglePost = () => {
                   </>
                 ) : (
                   <>
-                    <Link className="text-Blueviolet" to="/">
-                      Log In to add a comment
+                    <Link className="text-Blueviolet" to="/forum">
+                      Connecter vous pour commenter
                     </Link>
                   </>
                 )}
