@@ -44,22 +44,8 @@ const CreatePost = () => {
   };
 
   
-    const fetchPosts = async () => {
-      setLoading(true);
-      try {
-        const { data } = await axios.get("/api/posts"); // Get posts from API
-        setPosts(data.posts);
-      } catch (error) {
-        console.log(error);
-      } finally {
-        setLoading(false);
-      }
-    };
+ 
 
-    useEffect(() => {
-      fetchPosts();
-    }, []);
-    
 
 
   const openModal = () => {
@@ -85,15 +71,18 @@ const CreatePost = () => {
       createNewPost(values);
       //alert(JSON.stringify(values, null, 2));
       actions.resetForm();
-      fetchPosts();
+    //  fetchPosts();
       closeModal();
     },
   });
-
-  const createNewPost = async (values) => {
+  
+  const createNewPost = async (values)  => {
     try {
       const { data } = await axios.post("/api/post/create", values);
-      toast.success("post created");
+    
+    toast.success("post created");
+       
+   
     } catch (error) {
       console.log(error);
       toast.error(error);
@@ -159,9 +148,12 @@ transition-all
                 <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
                   <div className="flex min-h-full items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
                     <div className="w-full max-w-md space-y-8">
-                      <Typography variant="h5" sx={{ pb: 4 }}>
-                        Create post
-                      </Typography>
+                      <h1
+                        className="mt-6 text-center text-3xl font-bold tracking-tight text-Blueviolet"
+                        sx={{ pb: 4 }}
+                      >
+                        Creation de Post
+                      </h1>
                       <Box
                         component="form"
                         noValidate
@@ -185,7 +177,7 @@ transition-all
                           helperText={touched.title && errors.title}
                         />
 
-                        <Box sx={{ mb: 3 }}>
+                        <Box sx={{ mb: 0.5 }}>
                           <ReactQuill
                             theme="snow"
                             placeholder={"Write the post content..."}
@@ -201,16 +193,16 @@ transition-all
                           </Box>
                         </Box>
 
-                        <Button
+                        <button
                           type="submit"
                           fullWidth
-                          variant="contained"
-                          elevation={0}
+                          className="group relative flex w-full justify-center rounded-md border border-transparent bg-Blueviolet py-2 px-4 text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                          //  elevation={0}
                           sx={{ mt: 3, p: 1, mb: 2, borderRadius: "25px" }}
                           // disabled={loading}
                         >
-                          Create post
-                        </Button>
+                          Creer Post
+                        </button>
                       </Box>
                     </div>
                   </div>
