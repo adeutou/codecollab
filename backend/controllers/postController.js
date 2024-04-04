@@ -1,8 +1,8 @@
 
-const cloudinary = require("../utils/cloudinary");
+//const cloudinary = require("../utils/cloudinary");
 const Post = require("../models/postModel");
 const ErrorResponse = require("../utils/errorResponse");
-const main = require("../index");
+//const main = require("../index");
 
 //create post
 exports.createPost = async (req, res, next) => {
