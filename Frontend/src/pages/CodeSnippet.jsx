@@ -5,9 +5,6 @@ const CodeSnippet = () => {
   return (
     <>
         <div>CodeSnippet</div>
-        <div>
-            <CreateCodeSnippetForm />
-        </div>
     </>
   )
 }
