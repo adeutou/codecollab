@@ -25,7 +25,7 @@ export const userSignUpAction = (user) => async (dispatch) => {
       type: USER_SIGNUP_SUCCESS,
       payload: data,
     });
-    toast.success("Register Successfully!");
+    toast.success("Enregistré avec succès");
   } catch (error) {
     dispatch({
       type: USER_SIGNUP_FAIL,
@@ -44,7 +44,7 @@ export const userSignInAction = (user) => async (dispatch) => {
       type: USER_SIGNIN_SUCCESS,
       payload: data,
     });
-    toast.success("Login Successfully!");
+    toast.success("Connecté avec succès!");
   } catch (error) {
     dispatch({
       type: USER_SIGNIN_FAIL,

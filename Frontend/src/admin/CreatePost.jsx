@@ -80,7 +80,7 @@ const CreatePost = () => {
     try {
       const { data } = await axios.post("/api/post/create", values);
     
-    toast.success("post created");
+    toast.success("post crée avec succès!");
        
    
     } catch (error) {

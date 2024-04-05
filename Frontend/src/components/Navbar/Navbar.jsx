@@ -15,7 +15,7 @@ const navigation = [
     { name: 'Accueil', href: '/', current: true },
     { name: 'Bibliothèque de code', href: '/codesnippet', current: false },
     { name: 'Forum', href: '/forum', current: false },
-    { name: 'Tutoriels', href: '/tutoriel', current: false },
+    { name: 'Tutoriels', href: '/tuto', current: false },
 
 ];
 
