@@ -68,7 +68,7 @@ const SinglePost = () => {
       const { data } = await axios.put(`/api/comment/post/${id}`, { comment });
       if (data.success === true) {
         setComment("");
-        toast.success("comment added");
+        toast.success("commentaire ajouté!");
 
         displaySinglePost();
         socket.emit("comment", data.post.comments);

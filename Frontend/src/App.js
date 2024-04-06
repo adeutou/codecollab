@@ -19,7 +19,7 @@ import SinglePost from "./pages/SinglePost";
 import EditPost from "./admin/EditPost";
 import AdminDashboard from "./admin/AdminDashboard";
 import CreateCodeSnippetForm from "./components/CodeSnippet/CreateCodeSnippetForm";
-
+import Tutoriel from "./pages/Tutoriel";
 //HOC
 const AdminDashboardHOC = Layout(AdminDashboard);
 const CreatePostHOC = Layout(CreatePost);
@@ -39,10 +39,14 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/codesnippet" element={<CodeSnippet />} />
-              <Route path="/codesnippet/create" element={<CreateCodeSnippetForm />} />
+              <Route
+                path="/codesnippet/create"
+                element={<CreateCodeSnippetForm />}
+              />
               <Route path="/forum" element={<Forum />} />
-              <Route path="*" element={<NotFound />} />           
+              <Route path="*" element={<NotFound />} />
               <Route path="/post/:id" element={<SinglePost />} />
+              <Route path="/tuto" element={<Tutoriel />} />
               <Route
                 path="/admin/dashboard"
                 element={

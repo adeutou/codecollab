@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Editor } from '@tinymce/tinymce-react';
-import { TINYMCE_KEY } from '../../config';
+//import { TINYMCE_KEY } from '../../config';
 
 const CreateCodeSnippetForm = ({ onSubmit }) => {
   const [title, setTitle] = useState('');
@@ -30,7 +30,7 @@ const CreateCodeSnippetForm = ({ onSubmit }) => {
           />*/}
 
           <Editor
-            apiKey={TINYMCE_KEY}
+           // apiKey={TINYMCE_KEY}
             selector="textarea"
             textareaName="codeSnippet"
             onEditorChange={(newValue, editor) => {
