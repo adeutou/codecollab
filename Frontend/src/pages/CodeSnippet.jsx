@@ -56,7 +56,7 @@ const CodeSnippet = () => {
         {filteredCodeSnippets.map((snippet) => (
           <li key={snippet._id} className="border-b border-gray-200 py-4">
             <h2 className="text-lg font-semibold mb-2">{snippet.title}</h2>
-            <pre id='code-snippet' className="overflow-x-auto bg-gray-100 p-4">{snippet.code}</pre>
+            <pre id='code-snippet' className="overflow-x-auto bg-gray-100 p-4" dangerouslySetInnerHTML={{__html:snippet.code}}></pre>
           </li>
         ))}
       </ul>
