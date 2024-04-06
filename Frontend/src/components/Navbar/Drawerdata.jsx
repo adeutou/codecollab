@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 
 const navigation = [
     { name: 'Accueil', href: '/', current: true },
-    { name: 'Bibliothèque de code', href: '#mentor', current: false },
-    { name: 'Forum', href: '#forum', current: false },
-    { name: 'Tutoriels', href: '#testimonial', current: false },
+    { name: 'Bibliothèque de code', href: '/codesnippet', current: false },
+    { name: 'Forum', href: '/forum', current: false },
+    { name: 'Tutoriels', href: '/tuto', current: false },
 ];
 
 function classNames(...classes) {
