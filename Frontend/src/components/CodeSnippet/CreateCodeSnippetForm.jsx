@@ -42,6 +42,7 @@ const CreateCodeSnippetForm = ({ onSubmit }) => {
             value={language}
             onChange={(e) => setLanguage(e.target.value)}
           >
+            <option>Selectionner un langage</option>
             <option value="html/xml">HTML/XML</option>
             <option value="javascript">JavaScript</option>
             <option value="css">CSS</option>
