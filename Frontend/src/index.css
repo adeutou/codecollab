@@ -187,3 +187,13 @@ hr {
 #socialIcon:hover {
   background-color: #1A21BC !important;
 }
+
+.code-snippet {
+  background-color: #1E1E1E; /* Couleur de fond noir */
+  color: #D4D4D4; /* Couleur du texte */
+  font-family: 'Courier New', Courier, monospace; /* Police monospace */
+  padding: 10px; /* Espacement intérieur */
+  margin-bottom: 20px; /* Marge en bas */
+  border-radius: 5px; /* Coins arrondis */
+  overflow-x: auto; /* Activation du défilement horizontal si nécessaire */
+}
