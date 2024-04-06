@@ -28,6 +28,7 @@ const CreateCodeSnippetForm = ({ onSubmit }) => {
     } catch (error) {
       console.error('Erreur survenue lors de la creation du code snippet:', error);
     } 
+    navigate("/codesnippet/");
   };
 
   return (

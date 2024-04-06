@@ -188,7 +188,7 @@ hr {
   background-color: #1A21BC !important;
 }
 
-.code-snippet {
+#code-snippet {
   background-color: #1E1E1E; /* Couleur de fond noir */
   color: #D4D4D4; /* Couleur du texte */
   font-family: 'Courier New', Courier, monospace; /* Police monospace */

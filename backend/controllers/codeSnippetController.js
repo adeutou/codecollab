@@ -3,8 +3,8 @@ const CodeSnippet = require('../models/codeSnippetModel');
 // Créer un snippet de code
 exports.createCodeSnippet = async (req, res) => {
   try {
-    const { title, code } = req.body;
-    const codeSnippet = await CodeSnippet.create({ title, code });
+    const { title, code, language } = req.body;
+    const codeSnippet = await CodeSnippet.create({ title, code, language });
     res.status(201).json(codeSnippet);
   } catch (error) {
     console.error(error);
