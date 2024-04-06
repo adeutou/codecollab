@@ -21,7 +21,7 @@ const Data = () => {
                         {navigation.map((item) => (
                             <Link
                                 key={item.name}
-                                href={item.href}
+                                to={item.href}
                                 className={classNames(
                                     item.current ? 'text-black hover:opacity-100' : 'hover:text-black hover:opacity-100',
                                     'py-1 text-lg font-normal opacity-75 block'
