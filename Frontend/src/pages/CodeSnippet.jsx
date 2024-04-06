@@ -42,7 +42,7 @@ const CodeSnippet = () => {
 
   return (
     <div className="container mx-auto p-4">
-      <h1 className="text-3xl text-center font-bold mb-4">
+      <h1 className="text-3xl text-center text-Blueviolet font-bold mb-4">
         Liste des Code Snippets
       </h1>
       <div className="mb-4">
@@ -71,14 +71,14 @@ const CodeSnippet = () => {
       </div>
       <Link
         to="/codesnippet/create"
-        className="inline-block mb-4 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+        className="inline-block mb-4 text-BlueViolet px-4 py-2"
       >
         Créer un Code Snippet
       </Link>
       <ul>
         {filteredCodeSnippets.map((snippet) => (
           <li key={snippet._id} className="border-b border-gray-200 py-4">
-            <h2 className="text-lg font-semibold mb-2">{snippet.title}</h2>
+            <h2 className="text-lg text-Blueviolet font-semibold mb-2">{snippet.title}</h2>
             <pre
               id="code-snippet"
               className="overflow-x-auto bg-gray-100 p-4"
